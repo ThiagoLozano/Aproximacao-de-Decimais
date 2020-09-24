@@ -16,6 +16,8 @@ de entrada de dados.
 ```
 class Aproximacao:
     def __init__(self):
+        self.soma = 0
+        self.bits = 0
         while True:
             # Valida o dado de entrada.
             try:
