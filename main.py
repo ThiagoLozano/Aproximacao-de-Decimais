@@ -52,11 +52,11 @@ class Aproximacao:
 
     # Retorna a aproximação a maior.
     def A_maior(self):
-        """ 
-        Para mostrar o valor Binário de "A maior", preciso somar o Binário 
+        """
+        Para mostrar o valor Binário de "A maior", preciso somar o Binário
         de "A menor" conforme a quantidade de bits que tiver,
         Ex: 5 bits
-        Binário de "A menor" + 00001 
+        Binário de "A menor" + 00001
         Ex: 7 bits
         Binário de "A menor" + 0000001
         Obs: Só falta apenas esse pedaço.
@@ -65,15 +65,18 @@ class Aproximacao:
         print('()2'.format(), end='')
         binario = []
         decimal = []
+        # Cria o Binário que corresponde ao número de bits para a soma em decimal.
         for c in range(self.bits):
             binario.append(0)
         ultimo = len(binario) - 1
         binario[ultimo] = 1
+        # Converte o Binário em Decimal.
         for i, v in enumerate(binario):
             if v == 1:
                 decimal.append(2 ** (-i - 1))
         a_menor = self.soma
         decimal.append(a_menor)
+        # Soma com o valor de A menor já descoberto.
         soma = sum(decimal)
         print(' ({})10'.format(soma), end=' ')
         self.Erro(self.decimal, soma)
@@ -81,7 +84,7 @@ class Aproximacao:
     # Converte os valor binário para de decimal da aproximação a menor.
     def Converter_para_Decimal(self, binario):
         decimal = []
-        # Converte o Binário em um Decimal com Vírgulas.
+        # Converte o Binário em um Decimal com vírgula.
         for i, v in enumerate(binario):
             if v == 1:
                 # Pega os valores exponenciais correspondentes de cada posição
