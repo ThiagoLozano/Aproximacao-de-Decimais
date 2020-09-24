@@ -43,3 +43,9 @@ class Aproximacao:
         print("Err = {:.2f}%".format(err * 100))
 ```
 ![Busca]()
+
+### Representação
+
+![Multiplicacao](https://github.com/ThiagoLozano/Aproximacao-de-Decimais/blob/master/Screenshot/Multiplicacao.PNG)
+
+![Aproximação3](https://github.com/ThiagoLozano/Aproximacao-de-Decimais/blob/master/Screenshot/Aproximacao.PNG)
