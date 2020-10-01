@@ -16,8 +16,8 @@ de entrada de dados.
 ```
 class Aproximacao:
     def __init__(self):
-        self.soma = 0
-        self.bits = 0
+        self.soma_a_menor = 0
+        self.qnt_bits = 0
         while True:
             # Valida o dado de entrada.
             try:
@@ -30,19 +30,18 @@ class Aproximacao:
             except ValueError:
                 print("Erro: Tipo de Dado inválido\n")
 ```
-![Classe]()
+![Classe](https://github.com/ThiagoLozano/Aproximacao-de-Decimais/blob/master/Screenshot/Classe.PNG)
 
 ### Função Erro de Aproximação
 ```
 @staticmethod
-    # Calcula a porcentagem do erro de aproximação.
-    def Err(nd, no):
-        err = (nd - no) / nd
-        if err < 0:
-            err = err * (-1)
-        print("Err = {:.2f}%".format(err * 100))
+    def Erro(nd, no):
+        erro = (nd - no) / nd
+        if erro < 0:
+            erro = erro * (-1)
+        print("\033[33mErr\033[m = {:.2f}%".format(erro * 100))
 ```
-![Busca]()
+![Erro](https://github.com/ThiagoLozano/Aproximacao-de-Decimais/blob/master/Screenshot/Erro.PNG)
 
 ### Representação
 
