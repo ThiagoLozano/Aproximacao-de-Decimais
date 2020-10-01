@@ -24,14 +24,14 @@ class Aproximacao:
                 if self.qnt_bits < 5 or self.qnt_bits > 12:
                     print("Erro: Insira apenas valores inteiros entre 5 e 12.\n")
                 else:
-                    self.A_menor(self.decimal, self.qnt_bits)
-                    self.A_maior()
+                    self.A_Menor(self.decimal, self.qnt_bits)
+                    self.A_Maior()
                     break
             except ValueError:
                 print("Erro: Tipo de dado inválido\n")
 
     # Retorna a aproximações A Menor.
-    def A_menor(self, valor_decimal, bit):
+    def A_Menor(self, valor_decimal, bit):
         valor_binario = []
         # Faz as multiplicações sucessivas até gerar os valores binários.
         for c in range(bit):
@@ -42,7 +42,7 @@ class Aproximacao:
             valor_binario.append(int(valor_decimal))
         print('=' * 40)
         print('APROXIMAÇÕES\n')
-        print("A Menor: ", end='')
+        print("\033[36mA Menor: \033[m", end='')
         v = ''
         for c in valor_binario:
             v += str(c)
@@ -65,7 +65,7 @@ class Aproximacao:
         self.Erro(self.decimal, self.soma_a_menor)
 
     # Retorna as aproximações A Maior.
-    def A_maior(self):
+    def A_Maior(self):
         """ Etapa 1: Gera Binário """
         binario = []
         decimal = []
@@ -82,7 +82,7 @@ class Aproximacao:
                 decimal.append(2 ** (-i - 1))
         a_menor = self.soma_a_menor
         decimal.append(a_menor)
-        
+
         """ Etapa 3: Soma o Decimal 'A Menor' com o Decimal do Binário """
         # Soma com o valor de A menor já descoberto.
         soma = sum(decimal)
@@ -96,7 +96,7 @@ class Aproximacao:
                 soma = soma - 1
             soma = soma * 2
             valor_binario.append(int(soma))
-        print("A Maior: ", end='')
+        print("\033[36mA Maior: \033[m", end='')
         v = ''
         for c in valor_binario:
             v += str(c)
@@ -130,7 +130,7 @@ class Aproximacao:
         erro = (nd - no) / nd
         if erro < 0:
             erro = erro * (-1)
-        print("Err = {:.2f}%".format(erro * 100))
+        print("\033[33mErr\033[m = {:.2f}%".format(erro * 100))
 
 
 usuario = Aproximacao()
