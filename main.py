@@ -43,7 +43,7 @@ class Aproximacao:
         print('=' * 40)
         print('APROXIMAÇÕES\n')
         print("\033[36mA Menor: \033[m", end='')
-        v = ''
+        v = '0.'
         for c in valor_binario:
             v += str(c)
         # Retorna o valor Binário para a aproximação A Menor.
@@ -97,7 +97,7 @@ class Aproximacao:
             soma = soma * 2
             valor_binario.append(int(soma))
         print("\033[36mA Maior: \033[m", end='')
-        v = ''
+        v = '0.'
         for c in valor_binario:
             v += str(c)
         # Retorna o valor Binário para a aproximação A Maior.
