@@ -1,5 +1,4 @@
 # PROJETO PYTHON: Conversor Reais para Binário
-
 > Um programa que mostra a aproximação de um valor Binário em Decimal, simulando a lógica computacional.
 
 O programa deve receber um valor entre > 0 e < 1, depois o usuário deve escolher o espaço de bits que ele 
@@ -14,37 +13,49 @@ de entrada de dados.
 # Exemplo de Uso
 ### Classe
 ```
-class Aproximacao:
+class Conversor:
+    # Método Construtor.
     def __init__(self):
-        self.soma_a_menor = 0
-        self.qnt_bits = 0
-        while True:
-            # Valida o dado de entrada.
-            try:
-                self.decimal = float(input('Digite um valor entre 0 e 1: '))
-                if self.decimal <= 0 or self.decimal >= 1:
-                    print("Erro: Entrada de valor incorreto. Tente Novamente!\n")
-                else:
-                    self.Quantidade_bits()
-                    break
-            except ValueError:
-                print("Erro: Tipo de Dado inválido\n")
+        self.valor_decimal = 0
+        self.quantidade_bits = 0
+        self.binario_a_menor = '0.'
+        self.decimal_a_menor = 0
+        self.binario_a_maior = '0.'
+        self.decimal_a_maior = 0
+        self.erro_menor = 0
+        self.erro_maior = 0
 ```
-![Classe](https://github.com/ThiagoLozano/Aproximacao-de-Decimais/blob/master/Screenshot/Classe.PNG)
+![Classe](https://github.com/ThiagoLozano/Conversor-Reais-para-Binario/blob/master/Screenshot/Classe.PNG)
+
+### Função Binário A Menor
+```
+    def Binario_a_Menor(self, quant_bits, valor_decimal):
+        binario = []
+        # Faz as multiplicações sucessivas até gerar os valores binários.
+        for c in range(quant_bits):
+            valor_decimal * 2
+            if int(valor_decimal) == 1:
+                valor_decimal = valor_decimal - 1
+            valor_decimal = valor_decimal * 2
+            binario.append(int(valor_decimal))
+        # Passa os valores da lista para uma String única.
+        for c in binario:
+            self.binario_a_menor += str(c)
+        self.Decimal_a_Menor(binario)
+```
+![Binario A Menor](https://github.com/ThiagoLozano/Conversor-Reais-para-Binario/blob/master/Screenshot/Binario_A_Menor.PNG)
 
 ### Função Erro de Aproximação
 ```
-@staticmethod
-    def Erro(nd, no):
-        erro = (nd - no) / nd
-        if erro < 0:
-            erro = erro * (-1)
-        print("\033[33mErr\033[m = {:.2f}%".format(erro * 100))
+    def Erro_Menor(self, valor_obtido):
+        self.erro_menor = ((self.valor_decimal - valor_obtido) / self.valor_decimal) * 100
+        if self.erro_menor < 0:
+            self.erro_menor = self.erro_menor * (-1)
 ```
-![Erro](https://github.com/ThiagoLozano/Aproximacao-de-Decimais/blob/master/Screenshot/Erro.PNG)
+![Erro](https://github.com/ThiagoLozano/Conversor-Reais-para-Binario/blob/master/Screenshot/Erro.PNG)
 
 ### Representação
 
-![Multiplicacao](https://github.com/ThiagoLozano/Aproximacao-de-Decimais/blob/master/Screenshot/Multiplicacao.PNG)
+![Multiplicacao](https://github.com/ThiagoLozano/Conversor-Reais-para-Binario/blob/master/Screenshot/Modelo_Conversao_Binario.PNG)
 
-![Aproximação3](https://github.com/ThiagoLozano/Aproximacao-de-Decimais/blob/master/Screenshot/Aproximacao.PNG)
+![Aproximação](https://github.com/ThiagoLozano/Conversor-Reais-para-Binario/blob/master/Screenshot/Modelo_Conversao.PNG)
