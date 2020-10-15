@@ -1,4 +1,4 @@
-# PROJETO PYTHON: Aproximação de Decimais
+# PROJETO PYTHON: Conversor Reais para Binário
 
 > Um programa que mostra a aproximação de um valor Binário em Decimal, simulando a lógica computacional.
 
